@@ -1,0 +1,10 @@
+[Unit]
+Description=Poli-REDI backend network
+
+[Network]
+NetworkName=poliredi-backend
+Driver=bridge
+Internal=true
+
+[Quadlet]
+DefaultDependencies=false

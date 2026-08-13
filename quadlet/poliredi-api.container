@@ -1,0 +1,24 @@
+[Unit]
+Description=Poli-REDI API
+
+[Container]
+Image=localhost/poliredi-api:dev
+ContainerName=poliredi-api
+Pull=never
+
+EnvironmentFile=%h/.config/poliredi/api.env
+Secret=poliredi-db-password,type=env,target=DB_PASSWORD
+
+Network=poliredi-frontend.network
+Network=poliredi-backend.network
+
+NoNewPrivileges=true
+ReadOnly=true
+Tmpfs=/tmp
+
+[Service]
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

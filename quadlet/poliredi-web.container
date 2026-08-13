@@ -1,0 +1,27 @@
+[Unit]
+Description=Poli-REDI Web
+After=poliredi-api.container
+Requires=poliredi-api.container
+
+[Container]
+Image=localhost/poliredi-web:dev
+ContainerName=poliredi-web
+Pull=never
+
+Network=poliredi-frontend.network
+
+PublishPort=0.0.0.0:8443:8443
+
+Volume=/srv/poliredi/data/caddy:/data:Z
+Volume=/srv/poliredi/config/caddy:/config:Z
+
+NoNewPrivileges=true
+ReadOnly=true
+Tmpfs=/tmp
+
+[Service]
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

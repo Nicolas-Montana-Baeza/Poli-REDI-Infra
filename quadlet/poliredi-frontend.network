@@ -1,0 +1,10 @@
+[Unit]
+Description=Poli-REDI frontend network
+
+[Network]
+NetworkName=poliredi-frontend
+Driver=bridge
+
+[Quadlet]
+
+DefaultDependencies=false

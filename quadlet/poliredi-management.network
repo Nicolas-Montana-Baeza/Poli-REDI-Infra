@@ -1,0 +1,10 @@
+[Unit]
+Description=Poli-REDI management network
+
+[Network]
+NetworkName=poliredi-management
+Driver=bridge
+Internal=true
+
+[Quadlet]
+DefaultDependencies=false

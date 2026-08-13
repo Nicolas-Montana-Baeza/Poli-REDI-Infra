@@ -1,0 +1,26 @@
+# Secrets / environment
+.env
+.env.*
+*.env
+secrets/
+
+# Certificates / private keys
+*.key
+*.pem
+*.pfx
+*.p12
+*.crt
+
+# Runtime data
+data/
+logs/
+backups/
+
+# Temporary/editor files
+*~
+*.bak
+*.swp
+.DS_Store
+
+# Local runtime systemd/Quadlet link
+/systemd
