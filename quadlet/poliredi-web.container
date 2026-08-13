@@ -4,7 +4,7 @@ After=poliredi-api.container
 Requires=poliredi-api.container
 
 [Container]
-Image=localhost/poliredi-web:dev
+Image=localhost/poliredi-web:mvp2
 ContainerName=poliredi-web
 Pull=never
 

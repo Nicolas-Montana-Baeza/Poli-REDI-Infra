@@ -2,7 +2,7 @@
 Description=Poli-REDI API
 
 [Container]
-Image=localhost/poliredi-api:dev
+Image=localhost/poliredi-api:mvp2
 ContainerName=poliredi-api
 Pull=never
 
