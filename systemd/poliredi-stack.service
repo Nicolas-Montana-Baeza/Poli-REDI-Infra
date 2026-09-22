@@ -1,0 +1,15 @@
+[Unit]
+Description=Poli-REDI - stack Podman Compose
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=%h/projects/poliredi-infra/compose
+Environment=PODMAN_COMPOSE_PROVIDER=/usr/bin/podman-compose
+ExecStart=/usr/bin/podman compose --env-file %h/.config/poli-redi/compose.env -f compose.yaml up -d
+ExecStop=/usr/bin/podman compose --env-file %h/.config/poli-redi/compose.env -f compose.yaml stop
+TimeoutStartSec=300
+TimeoutStopSec=120
+
+[Install]
+WantedBy=default.target

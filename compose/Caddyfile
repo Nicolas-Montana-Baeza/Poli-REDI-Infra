@@ -1,0 +1,21 @@
+{
+    auto_https disable_redirects
+}
+
+https://localhost:8443, https://desktop-epot7cf.tail16d8fb.ts.net:8443 {
+    tls internal
+    bind 0.0.0.0
+    encode zstd gzip
+
+    handle /healthz {
+        respond "ok" 200
+    }
+    handle /api/* {
+        reverse_proxy backend:3000
+    }
+    handle {
+        root * /srv
+        try_files {path} /index.html
+        file_server
+    }
+}
